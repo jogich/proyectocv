@@ -1,41 +1,30 @@
 <?php
 include "db.php";
 /**
- *
+ * clase para acciones sobre los usuarios
  */
 class Usuario extends db
 {
   function __construct()
   {
-    //De esta forma realizamos la conexion a la base de datos
+    // conexion a la base de datos
     parent::__construct();
   }
-  //Insertamos un nuevo usuario
+
+  // anyadimos un usuario a la db
   function insertarUsuario($nombre,$mail,$pass,$apellido,$direccion,$telefono,$rrss){
-    //Construimos la consulta
-    $sql="INSERT INTO perfil (id,nombre,Correo,contrasena,Apellidos,Direccion,Correo,Telefono,Redes_Sociales)
-          VALUES (NULL, '".$nombre."','".$mail."', '".sha1($pass)."','".$apellido."','".$direccion."','".$telefono."','".$rrss."')";
-    //Realizamos la consulta
+  
+    $sql="INSERT INTO perfil (id,nombre,correo,contrasena,apellidos,direccion,telefono,redes_sociales)
+      VALUES (NULL, '".$nombre."','".$mail."', '".sha1($pass)."','".$apellido."','".$direccion."','".$telefono."','".$rrss."')";
+    
     $resultado=$this->realizarConsulta($sql);
-    if($resultado!=false){
-      //Recogemos el ultimo usuario insertado
-      $sql="SELECT * from perfil ORDER BY id DESC";
-      //Realizamos la consulta
-      $resultado=$this->realizarConsulta($sql);
-      if($resultado!=false){
-        return $resultado->fetch_assoc();
-      }else{
-        return null;
-      }
-    }else{
-      return null;
-    }
   }
-  //Devolvemos un nuevo usuario
-  function buscarUsuario($usuario){
-    //Construimos la consulta
-    $sql="SELECT * from usuario WHERE nombre='".$usuario."'";
-    //Realizamos la consulta
+
+  // buscamos el usuario introducido en login
+  function buscarUsuario($email){
+
+    $sql="SELECT * from perfil WHERE correo='".$email."'";
+    
     $resultado=$this->realizarConsulta($sql);
     if($resultado!=false){
       if($resultado!=false){
@@ -47,20 +36,5 @@ class Usuario extends db
       return null;
     }
   }
-  //comprobamos el mail y si devuelve mas de una fila es que tiene mas de un mail y si da mas de uno salta el erro de mail utilizado
-  function Comprobaremail($email){
-   $sql="SELECT Correo from perfil WHERE Correo='".$email."'";
-   //Realizamos la consulta
-   $resultado=$this->realizarConsulta($sql);
-   if($resultado!=null){
-     if ($resultado->num_rows>0) {
-       return null;
-     }else {
-       return 1;
-     }
-   }else{
-     return null;
-   }
- }
 }
  ?>

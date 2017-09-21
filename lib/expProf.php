@@ -32,7 +32,7 @@ public function morstrarExperiencia()
 {
   $sqlSelect = "SELECT * FROM exp_profesional";
   $resultado = $this->realizarConsulta($sqlSelect);
-  return parseResult($resultado);
+  return $this->parseResult($resultado);
 
 }
 
@@ -40,7 +40,7 @@ public function morstrarExperiencia()
 public function parseResult($result)
 {
   $data = array();
-    while($row = mysql_fetch_assoc($result))
+    while($row = $result->fetch_assoc())
     {
       $data[] = $row;
     }

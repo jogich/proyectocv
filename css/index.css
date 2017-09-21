@@ -17,13 +17,10 @@ body{
   float: right;
 }
 
-div{
-  color: white;
-  text-align: center;
+.login{
+position: relative;
+float: right;
 }
-
-
-
 
 .menu_simple {
     width: 100%;
@@ -48,6 +45,9 @@ div{
     background-color:  #000000;
 }
 
+
+
+
 .menu_simple ul li a:visited {
     color: white;
 }
@@ -55,4 +55,18 @@ div{
 .menu_simple ul li a:hover, .menu_simple ul li .current {
     color: white;
     background-color: #5FD367;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+footer {
+  width: 100%;
+  display: inline-block;
+  margin: 2em 0;
+  height: 70px;
+  background-color: #999;
 }

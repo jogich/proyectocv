@@ -6,12 +6,13 @@ class Seguridad
 {
   private $correo=null;
 	function __construct(){
-            
+		if (!isset($_SESSION)){
+			session_start();
+		}
+		
 		if(isset($_SESSION['correo'])){
 			$this->correo=$_SESSION['correo'];
-		}else{
-            session_start();
-        }
+		}
 	}
 	
 	public function getUsuario(){

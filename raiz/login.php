@@ -7,34 +7,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="#">
   </head>
   <body>
+    <h1>Iniciar sesión</h1>
 
-    <div class="wrapper">
-    <div class="container">
-        <h1>Bienvenido</h1>
-
-        <form class="form" method="post" action="login.php">
-            <input type="text" name="email" placeholder="Correo electrónico">
-            <input type="password" name="password" placeholder="Contraseña">
-            <button type="submit" id="login-button">Login</button>
-        </form>
-    </div>
-
-    <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
+    <form class="form" method="post" action="login.php">
+        <input type="text" name="email" placeholder="Correo electrónico">
+        <input type="password" name="password" placeholder="Contraseña">
+        <button type="submit" id="login-button">Login</button>
+    </form>
+    
 <?php
     if ((isset($_POST['email'])) && (!empty($_POST['email'])) &&
         (isset($_POST['password'])) && (!empty($_POST['password']))){
@@ -48,12 +31,15 @@
             $resultado = $login->buscarUsuario($_POST['email']);
             
             if ($resultado['correo']==($_POST['email'])){
-
-                if ($resultado['contrasena']==(sha1($_POST['password']))){
+                echo "hola";
+                if (($resultado['contrasena'])==(sha1($_POST['password']))){
+                    echo "hola";
                     echo "Has iniciado sesión correctamente!<br><br>";
-                    echo "<h2>Bienvenido</h2>";
+                    header('Location:index.html');
                     
                     $seguridad->addUsuario($_POST['email']);
+                }else{
+                    echo "Las contraseña no coincide, por favor introducela de nuevo.";
                 }
             }else{
                 echo "Este correo electrónico no existe. Registrese aquí.<br><br>";

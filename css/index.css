@@ -11,11 +11,11 @@ body{
 }
 
 .cajas2{
-  width: 892px;
-  height: 600px;
+  width: 862px;
+  height: 100%;
   background-color: #404040;
   float: right;
-  
+  padding: 20px;
 
 }
 

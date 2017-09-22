@@ -70,6 +70,7 @@ $user=$seguridad->getUsuario();
 					echo "Año Fin: ".$value["anyo_fin"];
 					echo "<br>";
 					echo "Descripcion: ".$value["texto"];
+					echo "<br><br>";
         }?>
   			</div>
 				<div class="titulo2">

@@ -27,7 +27,7 @@ $user=$seguridad->getUsuario();
 						echo "<li class=login><a href=registro.php>Registrarse</a></li>";
 					}else{
 						echo "<li><a href=expProfesional.php>Experiencia Profesional</a></li>";
-						echo "<li><a href=expProfesional.php>Experiencia Académica</a></li>";
+						echo "<li><a href=expEducativa.php>Experiencia Académica</a></li>";
 						echo "<li class=login><a href=logout.php>Cerrar sesión</a></li>";
 					}
 				?>

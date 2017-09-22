@@ -1,0 +1,43 @@
+button#login-button {
+  font-family:sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 20%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+button#login-button:hover, button#login-button:active, button#login-button:focus {
+  background: #43A047;
+}
+
+
+input[type=text], input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+.nav {
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+  color: black;
+  margin-top: 150px;
+}
+
+body{
+  background-color: #696969;
+}

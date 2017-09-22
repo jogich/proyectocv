@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Registro</title>
-        <link rel="stylesheet" href="css/register.css">
+        <link rel="stylesheet" href="../css/register.css">
     </head>
     <body>
     <?php
@@ -93,9 +93,7 @@
                         if ($resultado!==null) {
                             echo "ERROR al hacer el registro, por favor, intentelo más tarde.";
                         }else{
-                            echo "Registrado correctamente.";
-                            echo "<br><br>";
-                            echo "<a href='login.php'>LOGIN</a>";
+                            header('Location:index.html');
                         }
                     }else{
                         echo "Las contraseñas no coinciden, por favor, introducelas de nuevo.<hr>";

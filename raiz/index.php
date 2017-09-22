@@ -2,8 +2,11 @@
 include '../lib/usuario.php';
 $usuario = new Usuario();
 
+include '../lib/seguridad.php';
+$seguridad = new seguridad();
+$user=$seguridad->getUsuario();
 
- ?>
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,9 +20,17 @@ $usuario = new Usuario();
     		<ul style="width:100%;">
     			<li><a href="index.html">Inicio</a></li>
     			<li><a href="#">Blog</a></li>
-    			<li><a href="contacto.html">Contactar</a></li>
-      			<li class="login"><a href="login.php">Login</a></li>
-            <li class="login"><a href="registro.php">Registrarse</a></li>
+				<li><a href="contacto.html">Contactar</a></li>
+				<?php 
+					if ($user == null){
+						echo "<li class=login><a href=login.php>Login</a></li>";
+						echo "<li class=login><a href=registro.php>Registrarse</a></li>";
+					}else{
+						echo "<li><a href=expProfesional.php>Experiencia Profesional</a></li>";
+						echo "<li><a href=expProfesional.php>Experiencia Académica</a></li>";
+						echo "<li class=login><a href=logout.php>Cerrar sesión</a></li>";
+					}
+				?>
     		</ul>
   		</div>
 
@@ -45,7 +56,7 @@ $usuario = new Usuario();
   			</div>
 
   			<div class="titulo2">
-    			<h1>Formación</h1>
+    			<h1>Experiencia Académica</h1>
   			</div>
 
   			<div class="contenido2"><br>
@@ -61,7 +72,7 @@ $usuario = new Usuario();
         }?>
   			</div>
 				<div class="titulo2">
-    			<h1>Formación Profesional</h1>
+    			<h1>Experiencia Profesional</h1>
   			</div>
 
   			<div class="contenido2"><br>
@@ -69,11 +80,13 @@ $usuario = new Usuario();
 				foreach ($values as $value) {
 					echo "Nombre empresa: ".$value["empresa"];
 					echo "<br>";
-          echo "Año Inicio: ".$value["anyo_inicio"];
+         			echo "Año Inicio: ".$value["anyo_inicio"];
 					echo "<br>";
 					echo "Año Fin: ".$value["anyo_fin"];
 					echo "<br>";
 					echo "Descripcion: ".$value["texto"];
+					echo "<br><br>";
+					
         }?>
   			</div>
 

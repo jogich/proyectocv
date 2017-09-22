@@ -40,7 +40,7 @@
                     
                     if (($resultado['contrasena'])==(sha1($_POST['password']))){
                         echo "Has iniciado sesión correctamente!<br><br>";
-                        header('Location:index.html');
+                        header('Location:index.php');
                         
                         $seguridad->addUsuario($_POST['email']);
                     }else{

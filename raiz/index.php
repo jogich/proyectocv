@@ -19,6 +19,7 @@ $usuario = new Usuario();
     			<li><a href="#">Blog</a></li>
     			<li><a href="contacto.html">Contactar</a></li>
       			<li class="login"><a href="login.php">Login</a></li>
+            <li class="login"><a href="registro.php">Registrarse</a></li>
     		</ul>
   		</div>
 

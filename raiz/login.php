@@ -7,14 +7,15 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="#">
+        <link rel="stylesheet" href="../css/login.css">
      </head>
     <body>
         <h1>Iniciar sesión</h1>
         <?php
             if ((empty($_POST['email'])) &&
-            (empty($_POST['passsword']))) {
+                (empty($_POST['passsword']))) {
         ?>
+        <div class="nav">
         <form class="form" method="post" action="login.php">
             <input type="text" name="email" placeholder="Correo electrónico">
 
@@ -59,5 +60,6 @@
                 }
         }   
         ?>
+        </div>
     </body>
 </html>

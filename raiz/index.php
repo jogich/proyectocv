@@ -92,9 +92,6 @@ $user=$seguridad->getUsuario();
   			</div>
 
 		</div>
-
-
-
 		<footer>
 			<div class="copyright">
   			<p>&copy 2017 - Organisation</p>

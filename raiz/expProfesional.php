@@ -4,6 +4,16 @@
     <meta charset="utf-8">
     <title>Experiencia profesional</title>
     <?php include '../lib/expProf.php';
+    require_once '../lib/seguridad.php';
+
+	$seguridad = new Seguridad();
+	$user=$seguridad->getUsuario();
+    if ($seguridad->getUsuario()==null) {
+		header("Location: index.html");
+		exit;
+	}
+
+  ;
     $expProf = new ExpProf();
     $arrayCompany = $expProf->morstrarExperiencia();  ?>
     <script type="text/javascript">

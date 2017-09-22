@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <title>Experiencia Educativa</title>
     <?php include '../lib/expEdu.php';
+    require_once '../lib/seguridad.php';
+
+	$seguridad = new Seguridad();
+	$user=$seguridad->getUsuario();
+    if ($seguridad->getUsuario()==null) {
+		header("Location: index.html");
+		exit;
+	}
+  
     $expEdu = new ExpEdu();
     $arrayCompany = $expEdu->morstrarExperienciaEdu();  ?>
     <script type="text/javascript">

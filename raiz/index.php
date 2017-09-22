@@ -1,3 +1,9 @@
+<?php
+include '../lib/usuario.php';
+$usuario = new Usuario();
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,28 +32,52 @@
     			<h1>Datos personales</h1>
   			</div>
   			<div class="contenido1">
-				<h3>Nombre y apellido: Juan Pérez<br>
-				Dirección: ___________<br>
-				Teléfono(s):__________<br>
+					<?php $info=$usuario->mostrarInfo() ?>
+				<h3>Nombre y apellido: <?php echo $info['nombre']; ?> <br>
+				Dirección: <?php echo $info['direccion']; ?><br>
+				Teléfono(s):<?php echo $info['telefono']; ?><br>
 				Lugar y fecha de nacimiento: 21 de agosto de 1968<br>
-				Edad:_____<br>
+				Edad:19<br>
 				Estado civil: Casado<br>
-				Documentos de Identificación:__________________<br>
-				País, cuidad y estado o departamento:____________<br>
+				Documentos de Identificación:53673537T<br>
+				País, cuidad y estado o departamento:España,Valencia<br>
   			</div>
 
   			<div class="titulo2">
-    			<h1>Nivel de educación</h1>
+    			<h1>Formación</h1>
   			</div>
 
   			<div class="contenido2"><br>
-				Estudios primarios (lugar, años cursados, año de inicio y finalización)<br>
-				Estudios secundarios (lugar, años cursados, año de inicio y finalización)<br>
-				Estudios universitarios (lugar, años cursados, año de inicio, finalización y título obtenido)<br>
-				Otros estudios (duración o intensidad y título obtenido)<br>
-				Idiomas (cuál o cuáles y nivel)
+				<?php $values = $usuario->morstrarExperienciaEdu();
+				foreach ($values as $value) {
+					echo "Nombre empresa: ".$value["empresa"];
+					echo "<br>";
+          echo "Año Inicio: ".$value["anyo_inicio"];
+					echo "<br>";
+					echo "Año Fin: ".$value["anyo_fin"];
+					echo "<br>";
+					echo "Descripcion: ".$value["texto"];
+        }?>
   			</div>
+				<div class="titulo2">
+    			<h1>Formación Profesional</h1>
+  			</div>
+
+  			<div class="contenido2"><br>
+				<?php $values = $usuario->morstrarExperiencia();
+				foreach ($values as $value) {
+					echo "Nombre empresa: ".$value["empresa"];
+					echo "<br>";
+          echo "Año Inicio: ".$value["anyo_inicio"];
+					echo "<br>";
+					echo "Año Fin: ".$value["anyo_fin"];
+					echo "<br>";
+					echo "Descripcion: ".$value["texto"];
+        }?>
+  			</div>
+
 		</div>
+
 
 
 		<footer>

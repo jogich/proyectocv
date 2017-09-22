@@ -20,9 +20,9 @@ public function insertarPerfil($nombre, $apellidos, $direccion, $telefono,$redes
 }
 
 //Funcion para actualizar el perfil
-public function updatePerfil($nombre, $apellidos, $direccion, $telefono,$redes,$correo, $id)
+public function updatePerfil($nombre, $apellidos, $direccion, $telefono,$redes,$correo)
 {
-  $sqlUpdate="UPDATE perfil SET nombre='".$nombre."', apellidos='".$apellidos."',direccion='".$direccion."', telefono='".$telefono."', redes_Sociales='".$redes."', correo='".$correo."' WHERE id=".$id."";
+  $sqlUpdate="UPDATE perfil SET nombre='".$nombre."', apellidos='".$apellidos."',direccion='".$direccion."', telefono='".$telefono."', redes_Sociales='".$redes."', correo='".$correo."' WHERE correo='".$correo."'";
   $this->realizarConsulta($sqlUpdate);
 
 }

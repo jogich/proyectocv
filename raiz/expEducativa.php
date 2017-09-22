@@ -9,10 +9,10 @@
 	$seguridad = new Seguridad();
 	$user=$seguridad->getUsuario();
     if ($seguridad->getUsuario()==null) {
-		header("Location: index.html");
+		header("Location: index.php");
 		exit;
 	}
-  
+
     $expEdu = new ExpEdu();
     $arrayCompany = $expEdu->morstrarExperienciaEdu();  ?>
     <script type="text/javascript">
@@ -43,6 +43,11 @@
           $i++;
         }
         echo "</select>";
+        $header = 'From: ' . "joravlo@gmail.com" . " \r\n";
+        $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
+        $header .= "Mime-Version: 1.0 \r\n";
+        $header .= "Content-Type: text/plain";
+        mail("joravlo@gmail.com", "asunto", utf8_decode("hola"), $header);
        ?>
 
         Centro:<input id="edu" type="text" name="edu" value="">

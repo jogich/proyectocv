@@ -9,7 +9,7 @@
 	$seguridad = new Seguridad();
 	$user=$seguridad->getUsuario();
     if ($seguridad->getUsuario()==null) {
-		header("Location: index.html");
+		header("Location: index.php");
 		exit;
 	}
 

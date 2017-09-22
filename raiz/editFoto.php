@@ -9,7 +9,7 @@
 	$seguridad = new Seguridad();
 	$user=$seguridad->getUsuario();
     if ($seguridad->getUsuario()==null) {
-		header("Location: index.html");
+		header("Location: index.php");
 		exit;
 	} ?>
 
@@ -23,7 +23,7 @@
 	<h1>Editar Foto</h1>
 
 		<form action="insertarImagen.php" enctype="multipart/form-data" method="post">
-		  <label for="imagen">Imagen:</label> 
+		  <label for="imagen">Imagen:</label>
 		  <input id="imagen" name="imagen" size="30" type="file" />
 		  <input type="submit" value="Cambiar datos" />
 		</form>
@@ -38,7 +38,7 @@
        Teléfono:<input type="text" name="telefono"  value=""><br><br>
        Redes Sociales:<input type="text" name="redes"  value=""><br><br>
        Correo:<input type="text" name="correo"  value=""><br><br>
-    
+
 
        <input type="submit" name="Enviar" value="Enviar">
        <input type="reset" name="Reset" value="Reset">
@@ -47,9 +47,9 @@
 	<?php
 
 	      if (checkForm("nombre") && checkForm("apellidos") && checkForm("direccion") && checkForm("telefono")&& checkForm("redes")&& checkForm("correo")) {
-	        include 'modificarDatos.php';
+	        include '../lib/modificarDatos.php';
 	        $modificarDatos = new modificarDatos();
-	        $modificarDatos->insertarPerfil($_POST["nombre"], $_POST["apellidos"], $_POST["direccion"], $_POST["telefono"],$_POST["redes"],$_POST["correo"]);
+	        $modificarDatos->updatePerfil($_POST["nombre"], $_POST["apellidos"], $_POST["direccion"], $_POST["telefono"],$_POST["redes"],$_POST["correo"]);
 
 	      }
 

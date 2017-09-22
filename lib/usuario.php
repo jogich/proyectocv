@@ -5,36 +5,33 @@ include "db.php";
  */
 class Usuario extends db
 {
-  function __construct()
-  {
-    // conexion a la base de datos
-    parent::__construct();
-  }
+	function __construct()
+  	{
+    	// conexion a la base de datos
+    	parent::__construct();
+  	}
 
-  // anyadimos un usuario a la db
-  function insertarUsuario($nombre,$mail,$pass,$apellido,$direccion,$telefono,$rrss){
+  	// anyadimos un usuario a la db
+  	function insertarUsuario($nombre,$mail,$pass,$apellido,$direccion,$telefono,$rrss){
   
-    $sql="INSERT INTO perfil (id,nombre,correo,contrasena,apellidos,direccion,telefono,redes_sociales)
-      VALUES (NULL, '".$nombre."','".$mail."', '".sha1($pass)."','".$apellido."','".$direccion."','".$telefono."','".$rrss."')";
+    	$sql="INSERT INTO perfil (id,nombre,correo,contrasena,apellidos,direccion,telefono,redes_sociales)
+    	VALUES (NULL, '".$nombre."','".$mail."', '".sha1($pass)."','".$apellido."','".$direccion."','".$telefono."','".$rrss."')";
     
-    $resultado=$this->realizarConsulta($sql);
-  }
+    	$resultado=$this->realizarConsulta($sql);
+  	}
 
-  // buscamos el usuario introducido en login
-  function buscarUsuario($email){
+  	// buscamos el usuario introducido en login
+  	function buscarUsuario($email){
 
-    $sql="SELECT * from perfil WHERE correo='".$email."'";
+    	$sql="SELECT * from perfil WHERE correo='".$email."'";
     
-    $resultado=$this->realizarConsulta($sql);
-    if($resultado!=false){
-      if($resultado!=false){
-        return $resultado->fetch_assoc();
-      }else{
-        return null;
-      }
-    }else{
-      return null;
+    	$resultado=$this->realizarConsulta($sql);
+    	
+      	if($resultado!=false){
+        	return $resultado->fetch_assoc();
+      	}else{
+        	return null;
+      	}
     }
-  }
 }
- ?>
+?>

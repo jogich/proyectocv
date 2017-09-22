@@ -19,7 +19,7 @@ $user=$seguridad->getUsuario();
     	<div class="menu_simple">
     		<ul style="width:100%;">
     			<li><a href="index.php">Inicio</a></li>
-    			<li><a href="#">Blog</a></li>
+    			<li><a href="https://mycurriculum2daw.wordpress.com/">Blog</a></li>
 				<li><a href="contacto.html">Contactar</a></li>
 				<?php 
 					if ($user == null){

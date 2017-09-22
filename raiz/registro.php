@@ -93,7 +93,7 @@
                         if ($resultado!==null) {
                             echo "ERROR al hacer el registro, por favor, intentelo más tarde.";
                         }else{
-                            header('Location:index.html');
+                            header('Location:index.php');
                         }
                     }else{
                         echo "Las contraseñas no coinciden, por favor, introducelas de nuevo.<hr>";

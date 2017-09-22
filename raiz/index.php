@@ -18,7 +18,7 @@ $user=$seguridad->getUsuario();
 
     	<div class="menu_simple">
     		<ul style="width:100%;">
-    			<li><a href="index.html">Inicio</a></li>
+    			<li><a href="index.php">Inicio</a></li>
     			<li><a href="#">Blog</a></li>
 				<li><a href="contacto.html">Contactar</a></li>
 				<?php 

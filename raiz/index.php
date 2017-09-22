@@ -12,7 +12,7 @@ $user=$seguridad->getUsuario();
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="../css/index.css">
-		<title></title>
+		<title>Mi Currículum </title>
   	</head>
   	<body>
 
@@ -36,7 +36,7 @@ $user=$seguridad->getUsuario();
   		</div>
 
 		<div class="cajas">
-			<div align="center"><img src="../img/profile-photo.jpg"><br><h1>Ximet</h1><br>Se manda a Abram ser perfecto — Él será padre de muchas naciones — Se le cambia el nombre por el de Abraham — Jehová hace convenio de ser el Dios de Abraham y de su descendencia para siempre — Además, Jehová le da la tierra de Canaán en heredad perpetua — La circuncisión llega a ser una señal del convenio sempiterno entre Dios y Abraham
+			<div align="center"><img src="../img/profile-photo.jpg"><br><h1>Xosef</h1><br>Se manda a Abram ser perfecto — Él será padre de muchas naciones — Se le cambia el nombre por el de Abraham — Jehová hace convenio de ser el Dios de Abraham y de su descendencia para siempre — Además, Jehová le da la tierra de Canaán en heredad perpetua — La circuncisión llega a ser una señal del convenio sempiterno entre Dios y Abraham
 			</div>
 		</div>
 

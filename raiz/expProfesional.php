@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/index.css">
     <title>Experiencia profesional</title>
     <?php include '../lib/expProf.php';
     require_once '../lib/seguridad.php';
@@ -30,7 +31,24 @@
 </script>
   </head>
   <body>
-
+  <div class="menu_simple">
+    		<ul style="width:100%;">
+    			<li><a href="index.php">Inicio</a></li>
+    			<li><a href="#">Blog</a></li>
+				<li><a href="contacto.html">Contactar</a></li>
+				<?php 
+					if ($user == null){
+						echo "<li class=login><a href=login.php>Login</a></li>";
+						echo "<li class=login><a href=registro.php>Registrarse</a></li>";
+					}else{
+						echo "<li><a href=expProfesional.php>Experiencia Profesional</a></li>";
+						echo "<li><a href=expEducativa.php>Experiencia Académica</a></li>";
+						echo "<li class=login><a href=logout.php>Cerrar sesión</a></li>";
+						echo "<li class=login><a href=editFoto.php>Editar perfil</a></li>";
+					}
+				?>
+    		</ul>
+  		</div>
     <form class="" action="expProfesional.php" method="post">
 
 
